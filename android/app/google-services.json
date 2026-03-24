@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "315063476023",
+    "project_id": "collectors-catalog-3ec8c",
+    "storage_bucket": "collectors-catalog-3ec8c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:315063476023:android:a631c66ff73bbf5b6c84b2",
+        "android_client_info": {
+          "package_name": "com.example.collectors_catalog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "315063476023-bhue3aa0esg280sd1e1582k8hsjsn1h7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.collectors_catalog",
+            "certificate_hash": "556b754ee42c58e41371cfc172824fe005e25b85"
+          }
+        },
+        {
+          "client_id": "315063476023-sb0v1atg99fd1tvhcg04d09f0mm834l5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.collectors_catalog",
+            "certificate_hash": "0ddc18a3a6fd750f0c13be2e1aacc98875b15a26"
+          }
+        },
+        {
+          "client_id": "315063476023-sojnch3l1s4us108k5jtfoskph9f1fm8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.collectors_catalog",
+            "certificate_hash": "2d1f42ce949566baa7ced1c8a99d849e3a2ee567"
+          }
+        },
+        {
+          "client_id": "315063476023-bnsesec1mpra8o8tc1jl47dcav4d1k3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASMIU1Buq9ZczuXibhL0towX5m57A_Kwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "315063476023-bnsesec1mpra8o8tc1jl47dcav4d1k3k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "315063476023-h8erm2ata6bnfg3gt4gco07f95mtgh2c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.collectorsCatalog"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

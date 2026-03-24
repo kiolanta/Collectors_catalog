@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Публічні елементи (items): читати можуть авторизовані, змінювати — тільки автор
+    match /items/{itemId} {
+      allow read: if request.auth != null && (
+                    resource.data.isPublic == true ||
+                    resource.data.createdBy == request.auth.uid
+                  );
+
+      allow create: if request.auth != null
+                    && request.resource.data.createdBy == request.auth.uid
+                    && request.resource.data.isPublic == true;
+
+      allow update, delete: if request.auth != null
+                            && request.auth.uid == resource.data.createdBy;
+    }
+
+    // Колекції користувачів (collections): тільки власник
+    match /collections/{collectionId} {
+      // ВАЖЛИВО: дозволяємо read для власника
+      allow read: if request.auth != null
+                  && request.auth.uid == resource.data.userId;
+      
+      allow create: if request.auth != null
+                    && request.resource.data.userId == request.auth.uid;
+      
+      allow update, delete: if request.auth != null
+                            && request.auth.uid == resource.data.userId;
+    }
+
+    // Зв'язки між колекцією і item (collection_items): тільки власник
+    match /collection_items/{linkId} {
+      allow read: if request.auth != null
+                  && request.auth.uid == resource.data.userId;
+
+      allow create: if request.auth != null
+                    && request.resource.data.userId == request.auth.uid;
+      
+      allow delete: if request.auth != null
+                    && request.auth.uid == resource.data.userId;
+      
+      allow update: if false;
+    }
+
+    // Профіль користувача (users): тільки власник документа
+    match /users/{userId} {
+      allow read, create, update, delete: if request.auth != null
+                                          && request.auth.uid == userId;
+    }
+  }
+}
