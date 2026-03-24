@@ -1,16 +1,70 @@
-# collectors_catalog
+# Artefacto - Collectors Catalog
 
-A new Flutter project.
+Кросплатформний мобільний застосунок для ведення особистих колекцій (монети, марки, фігурки, картки тощо) з авторизацією, пошуком, улюбленими, аналітикою та хмарним збереженням зображень.
 
-## Getting Started
+## Основні можливості
+- Авторизація користувача через Firebase Auth (email/password + Google Sign-In)
+- Створення, перегляд і видалення колекцій
+- Додавання, редагування та видалення елементів колекцій
+- Прив'язка елементів до колекцій через `collection_items`
+- Папка Favorites (додавання/видалення обраних елементів)
+- Пошук і фільтрація елементів
+- Завантаження зображень у Supabase Storage
+- Firebase Analytics для подій користувача
+- Анімовані переходи між екранами та плавні UI-переходи станів
 
-This project is a starting point for a Flutter application.
+## Технологічний стек
+- Flutter + Dart
+- Provider (керування станом)
+- Firebase:
+	- `firebase_core`
+	- `firebase_auth`
+	- `cloud_firestore`
+	- `firebase_analytics`
+- Supabase Storage (`supabase_flutter`)
+- `image_picker`, `google_fonts`
 
-A few resources to get you started if this is your first Flutter project:
+## Структура проєкту
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```text
+lib/
+	components/      # загальні UI-компоненти
+	models/          # моделі даних
+	navigation/      # навігаційні helper-и
+	pages/           # екрани застосунку
+	providers/       # керування станом (Provider)
+	repositories/    # доступ до даних (Firestore)
+	services/        # Auth, Supabase, валідація
+	utils/           # утиліти, анімації переходів
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Передумови
+- Flutter SDK `>= 3.9`
+- Dart SDK `>= 3.9`
+- Android Studio або VS Code
+- Firebase проєкт (Auth + Firestore)
+- Supabase проєкт (Storage bucket для зображень)
+
+У застосунку використано більше 4 рекомендованих елементів:
+- База даних і динамічні дані (Cloud Firestore)
+- Аналітика (Firebase Analytics)
+- Анімації (переходи між екранами і UI-станами)
+- Веб-сервіси / хмарні сервіси (Firebase + Supabase)
+- Мультимедіа (завантаження зображень)
+- Ефективний UX/UI (навігація, фільтри, швидкі сценарії дій)
+
+## Основні сценарії перевірки
+- Реєстрація/вхід користувача
+- Створення колекції
+- Додавання item із зображенням
+- Додавання/видалення з Favorites
+- Видалення item і перевірка коректного `itemCount`
+- Видалення акаунта з очищенням пов'язаних даних
+
+## Плани розвитку
+- Локалізація (UA/EN)
+- Push-нотифікації
+- Light/Dark theme switch
+- ML-класифікація типів колекцій
+
+
